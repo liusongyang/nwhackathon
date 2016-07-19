@@ -17,6 +17,11 @@ points = [
     }
 ]
 
+@ml.route('/')
+def index():
+    return "Hello, World!"
+
+
 @ml.route('/todo/api/ml', methods=['POST'])
 def doML():
     if not request.json or not 'temp' in request.json:
