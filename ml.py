@@ -17,8 +17,8 @@ points = [
     }
 ]
 
-@ml.route('/')
-def index():
+@ml.route('/hello')
+def hello():
     return "Hello, World!"
 
 
