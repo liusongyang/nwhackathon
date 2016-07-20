@@ -1,3 +1,0 @@
-Flask>=0.10
-pytz>=2015
-awesome-slugify>=1.6.5
