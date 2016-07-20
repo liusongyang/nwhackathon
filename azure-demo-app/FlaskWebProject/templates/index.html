@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Hack@Brown Workshops</h1>
+    <p class="lead">
+        A Flask demo app for
+        <a href="{{ url_for('workshop', title=slugify('Cloud Hosting with Microsoft Azure')) }}">Cloud Hosting with Microsoft Azure</a>
+    </p>
+    <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more about Flask &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+        <h2>Upcoming Workshops</h2>
+        <ul class="list-group">
+            {% for workshop in upcoming %}
+                <li class="list-group-item">
+                    <a href="{{ url_for('workshop', title=workshop.title_slug) }}">{{ workshop.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h2>Past Workshops</h2>
+        <ul class="list-group">
+            {% for workshop in past %}
+                <li class="list-group-item">
+                    <a href="{{ url_for('workshop', title=workshop.title_slug) }}">{{ workshop.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+</div>
+
+{% endblock %}

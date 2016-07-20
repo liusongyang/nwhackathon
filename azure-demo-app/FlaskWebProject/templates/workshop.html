@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>{{ workshop.title }}</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+        <h2>{{ workshop.when.strftime('%A, %B %d %Y at %I:%M%p') }}</h2>
+        <h3>{{ workshop.location }}</h3>
+
+        <p>See more on <a href="{{ workshop.facebook_event }}">Facebook</a></p>
+
+        {% if workshop.series %}
+            <h3>Part of <a href="{{ url_for('series', name=workshop.series_slug) }}">{{ workshop.series }} series</a></h3>
+        {% endif %}
+    </div>
+    <div class="col-md-2">
+
+    </div>
+</div>
+
+{% endblock %}
